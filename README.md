@@ -2,6 +2,51 @@
 
 *Thoughtworks challenge in Graduate Program Recruitment*
 
+## Brief Explanation
+
+In this challenge I used JUnit library in order to make easier all test management. That is why I decided to convert the project to a maven project because it makes more confortable to manage all dependencies.
+
+I used a classic Java schema project where there are two main folders inside `src`:
+
+```
+main
+  java
+    com
+      thoughtworks
+        MarsRover
+          domain
+            RoverData.java
+          utils
+            Utils.java
+          MarsRoverApplication.java
+```
+
+- **RoverData.java**: it contains the three parameters that confingures each rover (`x`, `y` and `orientation`).
+- **Utils.java**: it contains three functions: `moveToLeft()`, `moveToRight` and `isOutOfBounds()`.
+- **MarsRoverApplication**: main class where runs the challenge solution.
+
+```
+main
+  java
+    com
+      thoughtworks
+        MarsRover
+          test
+            MarsRoverTest.java
+          Application.java
+```
+
+- **MarsRoverTest**: test class where there are three simple cases including input given.
+- **Application**: main test class.
+
+All classes and methods are documentated in JavaDoc.
+
+### How to Run
+
+- **Main program**: compile and run `MarsRoverApplication.java`.
+- **Tests**: compile and run each test inside `MarsRoverTest.java`.
+
+
 ## Problem
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
