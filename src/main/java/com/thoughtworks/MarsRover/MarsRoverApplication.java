@@ -3,14 +3,35 @@ package com.thoughtworks.MarsRover;
 import com.thoughtworks.MarsRover.domain.RoverData;
 import com.thoughtworks.MarsRover.utils.Utils;
 
+import java.util.Scanner;
+
 public class MarsRoverApplication {
 
     /**
      * Main method of Mars Rover problem
      * @param args arguments
      */
+    @SuppressWarnings("InfiniteLoopStatement")
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
 
+        RoverData roverData;
+        while (true) {
+            int roverX = scanner.nextInt();
+            int roverY = scanner.nextInt();
+            char roverOrientation = scanner.next().charAt(0);
+            String instructions = scanner.next();
+
+            roverData = solve(x, y, roverX, roverY, roverOrientation, instructions);
+
+            System.out.print(roverData.getX());
+            System.out.print(' ');
+            System.out.print(roverData.getY());
+            System.out.print(' ');
+            System.out.println( roverData.getOrientation());
+        }
     }
 
     /**
@@ -23,7 +44,7 @@ public class MarsRoverApplication {
      * @param instructions character string with all movements (L, R, M)
      * @return rover data (x, y and orientation) at the end of the instructions
      */
-    public RoverData solve(int x, int y, int roverX, int roverY, char roverOrientation, String instructions) {
+    public static RoverData solve(int x, int y, int roverX, int roverY, char roverOrientation, String instructions) {
         RoverData roverData = new RoverData(roverX, roverY, roverOrientation);
 
         roverData = followInstructions(x, y, roverData, instructions);
@@ -39,7 +60,7 @@ public class MarsRoverApplication {
      * @param instructions character string with all movements (L, R, M)
      * @return rover data (x, y and orientation) at the end of the instructions
      */
-    private RoverData followInstructions(int x, int y, RoverData roverData, String instructions) {
+    private static RoverData followInstructions(int x, int y, RoverData roverData, String instructions) {
         char currentOrientation;
         for (int i = 0; i < instructions.length(); i++) {
             currentOrientation = roverData.getOrientation();
@@ -66,7 +87,7 @@ public class MarsRoverApplication {
      * @param roverData rover data (x, y and orientation) before the movement
      * @return rover data (x, y and orientation) after the movement
      */
-    private RoverData move(int x, int y, RoverData roverData) {
+    private static RoverData move(int x, int y, RoverData roverData) {
         switch (roverData.getOrientation()) {
             case 'N':
                 if (!Utils.isOutOfBounds(x, y, roverData.getX(), roverData.getY() + 1)) {

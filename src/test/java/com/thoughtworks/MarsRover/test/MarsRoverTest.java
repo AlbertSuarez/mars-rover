@@ -11,12 +11,6 @@ import static org.junit.Assert.assertEquals;
 @RunWith(JUnit4.class)
 public class MarsRoverTest {
 
-    private static MarsRoverApplication marsRoverApplication;
-
-    public MarsRoverTest() {
-        marsRoverApplication = new MarsRoverApplication();
-    }
-
     @Test
     public void noInstructionsTest() throws Exception {
         int x = 5;
@@ -26,7 +20,7 @@ public class MarsRoverTest {
         char roverOrientation = 'N';
         String instructions = "";
 
-        RoverData solution = marsRoverApplication.solve(x, y, roverX, roverY, roverOrientation, instructions);
+        RoverData solution = MarsRoverApplication.solve(x, y, roverX, roverY, roverOrientation, instructions);
 
         assertEquals(solution.getX(), roverX);
         assertEquals(solution.getY(), roverY);
@@ -42,7 +36,7 @@ public class MarsRoverTest {
         char roverOrientation = 'N';
         String instructions = "LMLMLMLMM";
 
-        RoverData solution = marsRoverApplication.solve(x, y, roverX, roverY, roverOrientation, instructions);
+        RoverData solution = MarsRoverApplication.solve(x, y, roverX, roverY, roverOrientation, instructions);
 
         assertEquals(solution.getX(), 1);
         assertEquals(solution.getY(), 3);
@@ -58,7 +52,7 @@ public class MarsRoverTest {
         char roverOrientation = 'E';
         String instructions = "MMRMMRMRRM";
 
-        RoverData solution = marsRoverApplication.solve(x, y, roverX, roverY, roverOrientation, instructions);
+        RoverData solution = MarsRoverApplication.solve(x, y, roverX, roverY, roverOrientation, instructions);
 
         assertEquals(solution.getX(), 5);
         assertEquals(solution.getY(), 1);
