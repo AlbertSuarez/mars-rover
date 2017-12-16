@@ -18,7 +18,6 @@ public class PlateauControllerTest {
     private static final int negativeX = -8;
     private static final int negativeY = -2;
 
-
     private PlateauController plateauController;
     private Plateau plateau;
 
@@ -34,7 +33,7 @@ public class PlateauControllerTest {
 
     @Test
     public void createCorrectlyAPlateau() throws Exception {
-        this.plateau = this.plateauController.createPlateau(x, y);
+        this.plateau = this.plateauController.create(x, y);
 
         assertEquals(plateau.getX(), x);
         assertEquals(plateau.getY(), y);
@@ -45,7 +44,7 @@ public class PlateauControllerTest {
     @Test
     public void createIncorrectlyAPlateau() throws Exception {
         try {
-            this.plateau = this.plateauController.createPlateau(negativeX, negativeY);
+            this.plateau = this.plateauController.create(negativeX, negativeY);
             assertEquals(1, 2); // Force false
         } catch (Exception e) {
             assertEquals(1, 1); // Force true

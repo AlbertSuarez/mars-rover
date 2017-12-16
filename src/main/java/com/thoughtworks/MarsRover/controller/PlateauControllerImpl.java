@@ -5,7 +5,7 @@ import com.thoughtworks.MarsRover.domain.Plateau;
 public class PlateauControllerImpl implements PlateauController {
 
     @Override
-    public Plateau createPlateau(int x, int y) throws Exception {
+    public Plateau create(int x, int y) throws Exception {
         if (x < 0 || y < 0) {
             throw new Exception("Plateau's coordinates can't be negative.");
         }

@@ -11,6 +11,6 @@ public interface PlateauController {
      * @return plateau with correct parameters
      * @throws Exception error when x or y are negative
      */
-    Plateau createPlateau(int x, int y) throws Exception;
+    Plateau create(int x, int y) throws Exception;
 
 }
