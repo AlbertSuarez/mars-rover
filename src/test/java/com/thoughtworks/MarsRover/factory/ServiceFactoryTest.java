@@ -19,7 +19,7 @@ public class ServiceFactoryTest {
     }
 
     @Test
-    public void noEmptyController() throws Exception {
+    public void noEmptyService() throws Exception {
         assertNotNull(this.marsRoverService);
     }
 
