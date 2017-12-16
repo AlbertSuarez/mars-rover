@@ -1,12 +1,12 @@
 package com.thoughtworks.MarsRover.domain;
 
-public class RoverData {
+public class RoverRobot {
 
     private int x;
     private int y;
     private char orientation;
 
-    public RoverData(int x, int y, char orientation) {
+    public RoverRobot(int x, int y, char orientation) {
         this.x = x;
         this.y = y;
         this.orientation = orientation;
