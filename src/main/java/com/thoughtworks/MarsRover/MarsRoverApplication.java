@@ -12,25 +12,25 @@ public class MarsRoverApplication {
      */
     @SuppressWarnings("InfiniteLoopStatement")
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-        int y = scanner.nextInt();
-
-        RoverRobot roverRobot;
-        while (true) {
-            int roverX = scanner.nextInt();
-            int roverY = scanner.nextInt();
-            char roverOrientation = scanner.next().charAt(0);
-            String instructions = scanner.next();
-
-            // TODO Complete code
-
-            System.out.print(roverRobot.getX());
-            System.out.print(' ');
-            System.out.print(roverRobot.getY());
-            System.out.print(' ');
-            System.out.println( roverRobot.getOrientation());
-        }
+//        Scanner scanner = new Scanner(System.in);
+//        int x = scanner.nextInt();
+//        int y = scanner.nextInt();
+//
+//        RoverRobot roverRobot;
+//        while (true) {
+//            int roverX = scanner.nextInt();
+//            int roverY = scanner.nextInt();
+//            char roverOrientation = scanner.next().charAt(0);
+//            String instructions = scanner.next();
+//
+//            // TODO Complete code
+//
+//            System.out.print(roverRobot.getX());
+//            System.out.print(' ');
+//            System.out.print(roverRobot.getY());
+//            System.out.print(' ');
+//            System.out.println( roverRobot.getOrientation());
+//        }
     }
 
 }
