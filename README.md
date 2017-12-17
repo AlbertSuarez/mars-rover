@@ -6,7 +6,7 @@
 
 In this challenge I used JUnit library in order to make easier all test management. That is why I decided to convert the project to a maven project because it makes more confortable to manage all dependencies.
 
-I used a classic Java schema project where there are two main folders inside `src`:
+I designed an OOP architechture for this project where we can find all de source code in `main` folder and all tests in `test` folder:
 
 ```
 main
@@ -14,36 +14,68 @@ main
     com
       thoughtworks
         MarsRover
+          controller
+            PlateauController.java
+            PlateauControllerImpl.java
+            RobotController.java
+            RobotControllerImpl.java
           domain
-            RoverData.java
-          utils
-            Utils.java
-          MarsRoverApplication.java
+            Plateau.java
+            RoverRobot.java
+          factory
+            ServiceFactory.java
+          service
+            MarsRoverService.java
+            MarsRoverServiceImpl.java
+          Main.java
 ```
+### Controller
+I created a controller for each domain model in order to control all the actions in relation with these items. I decided to create an interface for each controller because if we want to add a new behaviour in the future of this project, having an interface makes easier this issue.
+- **PlateauController.java**: this controller manages all actions in relation with a Plateau, for example `create` an instance of a plateau.
+- **RobotController.java**: this controller manages all actions in relation with a Robot, for example `create` an instance of a robot, `check` if it can move, `make` a movement or `rotate`.
 
-- **RoverData.java**: it contains the three parameters that confingures each rover (`x`, `y` and `orientation`).
-- **Utils.java**: it contains three functions: `moveToLeft()`, `moveToRight` and `isOutOfBounds()`.
-- **MarsRoverApplication**: main class where runs the challenge solution.
+### Domain
+I created a class for each model in this project with all parameters that they need.
+- **Plateau.java**: this item has a `x` upper-right coordinate and a `y` upper-right coordinate.
+- **RoverRobot.java**: this item has a `x` coordinate, `y` coordinate and a `orientation`.
+
+### Factory
+I created a singleton class in order to restrict an only one instance of each service that we need in this project.
+- **ServiceFactory.java**: this singleton class has a `getXService()` function for each `X` service that exists in this project.
+
+### Service
+I created a service in order to group all the actions that some controllers have a realationship between them. I decided to create an interface for each service because if we want to add a new behaviour in the future of this project, having an interface makes easier this issue.
+- **MarsRoverService.java**: this service groups `PlateauController` and `RobotController` in order to solve the Mars Rover problem.
+
+### Main
+I created a Main class as start point to run this project.
+- **Main.java**: this class has a `main` function that reads from command line, runs `solve` function of `MarsRoverService` and print the solution through also command line.
 
 ```
-main
+test
   java
     com
       thoughtworks
         MarsRover
-          test
-            MarsRoverTest.java
-          Application.java
+          controller
+            PlateauController.java
+            RobotController.java
+          domain
+            Plateau.java
+            RoverRobot.java
+          factory
+            ServiceFactory.java
+          service
+            MarsRoverService.java
 ```
 
-- **MarsRoverTest**: test class where there are three simple cases including input given.
-- **Application**: main test class.
+I created a test class for each class in order to test the correct exectution of their behaviour in all the possible situations, including input verification.
 
 All classes and methods are documentated in JavaDoc.
 
 ## Run project
 
-Needs: `Java 8` & `Maven`
+Needs: `Java 8` & `maven`
 
 ### Program 
 
