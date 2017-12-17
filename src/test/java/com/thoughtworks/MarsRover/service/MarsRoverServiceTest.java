@@ -78,4 +78,34 @@ public class MarsRoverServiceTest {
         assertEquals(solution.getOrientation(), expectedOrientation);
     }
 
+    @Test
+    public void solveWithWrongRobotParameters() throws Exception {
+        final int roverX = -1;
+        final int roverY = -9;
+        final char roverOrientation = 'A';
+        final String instructions = "LLRMMMLRMMR";
+
+        try {
+            this.marsRoverService.solve(x, y, roverX, roverY, roverOrientation, instructions);
+            assertEquals(1, 2); // Force false
+        } catch (Exception e) {
+            assertEquals(1, 1); // Force true
+        }
+    }
+
+    @Test
+    public void solveWithWrongInstructions() throws Exception {
+        final int roverX = 3;
+        final int roverY = 3;
+        final char roverOrientation = 'E';
+        final String instructions = "ASDFGHJKLP";
+
+        try {
+            this.marsRoverService.solve(x, y, roverX, roverY, roverOrientation, instructions);
+            assertEquals(1, 2); // Force false
+        } catch (Exception e) {
+            assertEquals(1, 1); // Force true
+        }
+    }
+
 }
