@@ -6,7 +6,7 @@
 
     <groupId>com.thoughtworks</groupId>
     <artifactId>mars-rover</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>mars-rover</name>
     <description>Mars Rover: Thoughtworks challenge in Graduate Program Recruitment</description>
     <packaging>jar</packaging>
@@ -19,33 +19,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>com.thoughtworks.mars-rover.Application</start-class>
-        <java.version>1.8</java.version>
-    </properties>
-
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-            <resource>
-                <directory>src/test/resources</directory>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
