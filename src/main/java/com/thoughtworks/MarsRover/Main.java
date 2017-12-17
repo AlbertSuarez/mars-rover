@@ -6,7 +6,7 @@ import com.thoughtworks.MarsRover.service.MarsRoverService;
 
 import java.util.Scanner;
 
-public class MarsRoverApplication {
+public class Main {
 
     /**
      * Main method of Mars Rover problem
