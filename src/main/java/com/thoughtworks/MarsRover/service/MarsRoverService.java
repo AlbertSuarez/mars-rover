@@ -15,6 +15,6 @@ public interface MarsRoverService {
      * @return rover data (x, y and orientation) at the end of the instructions
      * @throws Exception error when some input is incorrect
      */
-    RoverRobot solve(int x, int y, int roverX, int roverY, int roverOrientation, String instructions) throws Exception;
+    RoverRobot solve(int x, int y, int roverX, int roverY, char roverOrientation, String instructions) throws Exception;
 
 }

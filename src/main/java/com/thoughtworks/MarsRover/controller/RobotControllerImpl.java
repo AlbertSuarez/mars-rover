@@ -17,34 +17,15 @@ public class RobotControllerImpl implements RobotController {
 
     @Override
     public boolean canMove(RoverRobot roverRobot, Plateau plateau) {
-        roverRobot = moveToTheNextPosition(roverRobot);
-        return roverRobot.getX() >= 0 && roverRobot.getY() >= 0 &&
-                roverRobot.getX() <= plateau.getX() && roverRobot.getY() <= plateau.getY();
+        if (roverRobot.getOrientation() == 'N' && roverRobot.getY() + 1 > plateau.getY()) return false;
+        else if (roverRobot.getOrientation() == 'E' && roverRobot.getX() + 1 > plateau.getX()) return false;
+        else if (roverRobot.getOrientation() == 'S' && roverRobot.getY() - 1 < 0) return false;
+        else if (roverRobot.getOrientation() == 'W' && roverRobot.getX() + 1 < 0) return false;
+        return true;
     }
 
     @Override
     public RoverRobot move(RoverRobot roverRobot) {
-        return moveToTheNextPosition(roverRobot);
-    }
-
-    @Override
-    public RoverRobot rotate(RoverRobot roverRobot, char rotation) throws Exception {
-        if (rotation == 'L') {
-            roverRobot.setOrientation(moveToLeft(roverRobot.getOrientation()));
-        } else if (rotation == 'R') {
-            roverRobot.setOrientation(moveToRight(roverRobot.getOrientation()));
-        } else {
-            throw new Exception("Rotation must be 'R' or 'L'");
-        }
-        return roverRobot;
-    }
-
-    /**
-     * Move rover robot to the next position
-     * @param roverRobot rover robot instance before movement
-     * @return rover robot instance after movement
-     */
-    private static RoverRobot moveToTheNextPosition(RoverRobot roverRobot) {
         switch (roverRobot.getOrientation()) {
             case 'N':
                 roverRobot.setY(roverRobot.getY() + 1);
@@ -58,6 +39,18 @@ public class RobotControllerImpl implements RobotController {
             case 'W':
                 roverRobot.setX(roverRobot.getX() - 1);
                 break;
+        }
+        return roverRobot;
+    }
+
+    @Override
+    public RoverRobot rotate(RoverRobot roverRobot, char rotation) throws Exception {
+        if (rotation == 'L') {
+            roverRobot.setOrientation(moveToLeft(roverRobot.getOrientation()));
+        } else if (rotation == 'R') {
+            roverRobot.setOrientation(moveToRight(roverRobot.getOrientation()));
+        } else {
+            throw new Exception("Rotation must be 'R' or 'L'");
         }
         return roverRobot;
     }
