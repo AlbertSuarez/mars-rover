@@ -41,11 +41,25 @@ main
 
 All classes and methods are documentated in JavaDoc.
 
-### How to Run
+## Run project
 
-- **Main program**: compile and run `MarsRoverApplication.java`.
-- **Tests**: compile and run each test inside `MarsRoverTest.java`.
+Needs: `Java 8` & `Maven`
 
+### Program 
+
+1. Extract files from `MarsRoverAS.zip`
+2. `cd MarsRoverAS/`
+3. `mvn clean`
+4. `mvn compile`
+5. `mvn exec:java`
+
+### Test 
+
+1. Extract files from `MarsRoverAS.zip`
+2. `cd MarsRoverAS/`
+3. `mvn clean`
+4. `mvn compile`
+5. `mvn test`
 
 ## Problem
 
