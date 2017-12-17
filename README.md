@@ -75,7 +75,7 @@ All classes and methods are documented in JavaDoc.
 
 ## Run project
 
-Needs: `Java 8` & `maven`
+Needs: `Java 6` & `maven`
 
 ### Program 
 
