@@ -4,9 +4,9 @@
 
 ## Brief Explanation
 
-In this challenge I used JUnit library in order to make easier all test management. That is why I decided to convert the project to a maven project because it makes more confortable to manage all dependencies.
+In this challenge I used JUnit library in order to make easier all test management. That is why I decided to convert the project to a maven project because it makes more comfortable to manage all dependencies.
 
-I designed an OOP architechture for this project where we can find all de source code in `main` folder and all tests in `test` folder:
+I designed an OOP architecture for this project where we can find all de source code in `main` folder and all tests in `test` folder:
 
 ```
 main
@@ -36,15 +36,15 @@ I created a controller for each domain model in order to control all the actions
 
 ### Domain
 I created a class for each model in this project with all parameters that they need.
-- **Plateau.java**: this item has a `x` upper-right coordinate and a `y` upper-right coordinate.
-- **RoverRobot.java**: this item has a `x` coordinate, `y` coordinate and a `orientation`.
+- **Plateau.java**: this item has an `x` upper-right coordinate and a `y` upper-right coordinate.
+- **RoverRobot.java**: this item has an `x` coordinate, `y` coordinate and an `orientation`.
 
 ### Factory
 I created a singleton class in order to restrict an only one instance of each service that we need in this project.
 - **ServiceFactory.java**: this singleton class has a `getXService()` function for each `X` service that exists in this project.
 
 ### Service
-I created a service in order to group all the actions that some controllers have a realationship between them. I decided to create an interface for each service because if we want to add a new behaviour in the future of this project, having an interface makes easier this issue.
+I created a service in order to group all the actions that some controllers have a relationship between them. I decided to create an interface for each service because if we want to add a new behaviour in the future of this project, having an interface makes easier this issue.
 - **MarsRoverService.java**: this service groups `PlateauController` and `RobotController` in order to solve the Mars Rover problem.
 
 ### Main
@@ -69,9 +69,9 @@ test
             MarsRoverService.java
 ```
 
-I created a test class for each class in order to test the correct exectution of their behaviour in all the possible situations, including input verification.
+I created a test class for each class in order to test the correct execution of their behaviour in all the possible situations, including input verification.
 
-All classes and methods are documentated in JavaDoc.
+All classes and methods are documented in JavaDoc.
 
 ## Run project
 
